@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juros.DataStore", "Juros.Da
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{43576DB7-621B-45EB-A90A-CB9F03CFE107}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juros.Api.Integration.Tests", "Juros.Api.Integration.Tests\Juros.Api.Integration.Tests.csproj", "{6BA7F3F0-7599-4435-9F18-FE73B88BAD98}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,9 +31,16 @@ Global
 		{A24D0030-CB0B-4131-A60F-4C65E2141855}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A24D0030-CB0B-4131-A60F-4C65E2141855}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A24D0030-CB0B-4131-A60F-4C65E2141855}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BA7F3F0-7599-4435-9F18-FE73B88BAD98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BA7F3F0-7599-4435-9F18-FE73B88BAD98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BA7F3F0-7599-4435-9F18-FE73B88BAD98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BA7F3F0-7599-4435-9F18-FE73B88BAD98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6BA7F3F0-7599-4435-9F18-FE73B88BAD98} = {43576DB7-621B-45EB-A90A-CB9F03CFE107}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5575C90B-1244-4EE3-8589-165EC5FF4FA9}
