@@ -16,7 +16,7 @@ namespace Juros.Api.Integration.Tests
 
         private void Initialize()
         {
-            
+            var localEnvironment = (LocalEnvironment)_environment;
         }
     }
 }
