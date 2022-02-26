@@ -39,7 +39,7 @@ namespace Juros.Api
         {
             services.AddDbContext<JurosDbContext>(options =>
             {
-                options.UseSqlServer(" ", builder =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), builder =>
                 {
                     builder.EnableRetryOnFailure(maxRetryCount: 20, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null)
                         .CommandTimeout(300);
