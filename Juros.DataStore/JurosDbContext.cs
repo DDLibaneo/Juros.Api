@@ -15,6 +15,13 @@ namespace Juros.DataStore
             base.OnConfiguring(optionsBuilder);
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Juro>()
+                .Property(e => e.Taxa)
+                .HasColumnType("DECIMAL(3, 2)");
+        }
+
         public DbSet<Juro> Juros { get; set; }
     }
 }
