@@ -26,7 +26,7 @@ namespace Juros.DataStore.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<decimal>("Taxa")
-                        .HasColumnType("DECIMAL(3, 2)");
+                        .HasColumnType("DECIMAL(5,2)");
 
                     b.HasKey("Id");
 

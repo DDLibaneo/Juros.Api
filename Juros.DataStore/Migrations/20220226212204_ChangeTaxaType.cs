@@ -9,7 +9,7 @@ namespace Juros.DataStore.Migrations
             migrationBuilder.AlterColumn<decimal>(
                 name: "Taxa",
                 table: "Juros",
-                type: "DECIMAL(3, 2)",
+                type: "DECIMAL(5,2)",
                 nullable: false,
                 oldClrType: typeof(decimal),
                 oldType: "decimal(18,2)");
@@ -23,7 +23,7 @@ namespace Juros.DataStore.Migrations
                 type: "decimal(18,2)",
                 nullable: false,
                 oldClrType: typeof(decimal),
-                oldType: "DECIMAL(3, 2)");
+                oldType: "DECIMAL(5,2)");
         }
     }
 }

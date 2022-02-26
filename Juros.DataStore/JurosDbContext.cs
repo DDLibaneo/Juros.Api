@@ -19,7 +19,7 @@ namespace Juros.DataStore
         {
             modelBuilder.Entity<Juro>()
                 .Property(e => e.Taxa)
-                .HasColumnType("DECIMAL(3, 2)");
+                .HasColumnType("DECIMAL(5,2)");
         }
 
         public DbSet<Juro> Juros { get; set; }

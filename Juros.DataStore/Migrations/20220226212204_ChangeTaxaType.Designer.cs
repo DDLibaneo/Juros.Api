@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Juros.DataStore.Migrations
 {
     [DbContext(typeof(JurosDbContext))]
-    [Migration("20220226204440_ChangeTaxaType")]
+    [Migration("20220226212204_ChangeTaxaType")]
     partial class ChangeTaxaType
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,7 +28,7 @@ namespace Juros.DataStore.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<decimal>("Taxa")
-                        .HasColumnType("DECIMAL(3, 2)");
+                        .HasColumnType("DECIMAL(5,2)");
 
                     b.HasKey("Id");
 

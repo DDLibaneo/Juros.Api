@@ -11,7 +11,6 @@ namespace Juros.Models.Entities
 
         [Required]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
-        [Range(0, 999.99)]
         public decimal Taxa { get; set; }
     }
 }
