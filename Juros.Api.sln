@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juros.Api", "Juros.Api\Juros.Api.csproj", "{06455E6D-A652-4FB2-B854-29D00A5703A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Juros.Api", "Juros.Api\Juros.Api.csproj", "{06455E6D-A652-4FB2-B854-29D00A5703A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juros.Services", "Juros.Services\Juros.Services.csproj", "{47DA9E53-DD44-4DAB-963E-115890247560}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Juros.Services", "Juros.Services\Juros.Services.csproj", "{47DA9E53-DD44-4DAB-963E-115890247560}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juros.DataStore", "Juros.DataStore\Juros.DataStore.csproj", "{A24D0030-CB0B-4131-A60F-4C65E2141855}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Juros.DataStore", "Juros.DataStore\Juros.DataStore.csproj", "{A24D0030-CB0B-4131-A60F-4C65E2141855}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{43576DB7-621B-45EB-A90A-CB9F03CFE107}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juros.Api.Integration.Tests", "Juros.Api.Integration.Tests\Juros.Api.Integration.Tests.csproj", "{6BA7F3F0-7599-4435-9F18-FE73B88BAD98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Juros.Api.Integration.Tests", "Juros.Api.Integration.Tests\Juros.Api.Integration.Tests.csproj", "{6BA7F3F0-7599-4435-9F18-FE73B88BAD98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juros.Models", "Juros.Models\Juros.Models.csproj", "{77A26698-617E-492C-9E2F-59CD5DD8A86A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{6BA7F3F0-7599-4435-9F18-FE73B88BAD98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BA7F3F0-7599-4435-9F18-FE73B88BAD98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BA7F3F0-7599-4435-9F18-FE73B88BAD98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77A26698-617E-492C-9E2F-59CD5DD8A86A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77A26698-617E-492C-9E2F-59CD5DD8A86A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77A26698-617E-492C-9E2F-59CD5DD8A86A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77A26698-617E-492C-9E2F-59CD5DD8A86A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
