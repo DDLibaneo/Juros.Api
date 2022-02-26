@@ -1,22 +1,20 @@
 using System;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace Juros.Api.Integration.Tests
 {
-    public class CommonFixture
+    public class JurosIntegrationTests : IClassFixture<CommonFixture>
     {
-        public JurosApiFixture JurosApiFixture { get; set; }
+        private readonly JurosApiFixture _apifixture;
 
-        public CommonFixture()
+        public JurosIntegrationTests(CommonFixture commonFixture)
         {
-            JurosApiFixture = new JurosApiFixture();
+            _apifixture = commonFixture.JurosApiFixture;
         }
-    }
 
-    public class JurosIntegrationTests
-    {
-        [Fact]
-        public void Test1()
+        [Fact(DisplayName = "GetJuro [Success] - Juro found")]
+        public async Task GetJuro_Found_Success()
         {
 
         }
