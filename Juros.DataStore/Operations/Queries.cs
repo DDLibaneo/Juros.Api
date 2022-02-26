@@ -9,7 +9,7 @@ namespace Juros.DataStore.Operations
 
     }
 
-    public class Queries
+    public class Queries : IQueries
     {
 
     }

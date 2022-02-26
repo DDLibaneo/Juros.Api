@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Juros.DataStore.Queries
+namespace Juros.DataStore.Operations
 {
-    public interface ICommands 
+    public interface ICommands
     { 
     
     }
 
-    public class Commands
+    public class Commands : ICommands
     {
 
     }

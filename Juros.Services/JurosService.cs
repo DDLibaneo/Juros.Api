@@ -7,7 +7,7 @@ namespace Juros.Services
         
     }
 
-    public class JurosService
+    public class JurosService : IJurosService
     {
 
     }

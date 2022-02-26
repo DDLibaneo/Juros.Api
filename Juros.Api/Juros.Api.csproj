@@ -10,5 +10,10 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Juros.DataStore\Juros.DataStore.csproj" />
+    <ProjectReference Include="..\Juros.Services\Juros.Services.csproj" />
+  </ItemGroup>
+
 
 </Project>
