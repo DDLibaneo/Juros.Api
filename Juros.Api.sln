@@ -13,7 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{43576DB7
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Juros.Api.Integration.Tests", "Juros.Api.Integration.Tests\Juros.Api.Integration.Tests.csproj", "{6BA7F3F0-7599-4435-9F18-FE73B88BAD98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juros.Models", "Juros.Models\Juros.Models.csproj", "{77A26698-617E-492C-9E2F-59CD5DD8A86A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Juros.Models", "Juros.Models\Juros.Models.csproj", "{77A26698-617E-492C-9E2F-59CD5DD8A86A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{CE34D92E-5F33-490F-B566-E9B78AA18FBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juros.Common.DataCreate", "Juros.Common.DataCreate\Juros.Common.DataCreate.csproj", "{FC73EB14-71AE-4E65-9C52-9E19D0EE69F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,12 +45,18 @@ Global
 		{77A26698-617E-492C-9E2F-59CD5DD8A86A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77A26698-617E-492C-9E2F-59CD5DD8A86A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77A26698-617E-492C-9E2F-59CD5DD8A86A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC73EB14-71AE-4E65-9C52-9E19D0EE69F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC73EB14-71AE-4E65-9C52-9E19D0EE69F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC73EB14-71AE-4E65-9C52-9E19D0EE69F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC73EB14-71AE-4E65-9C52-9E19D0EE69F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6BA7F3F0-7599-4435-9F18-FE73B88BAD98} = {43576DB7-621B-45EB-A90A-CB9F03CFE107}
+		{CE34D92E-5F33-490F-B566-E9B78AA18FBA} = {43576DB7-621B-45EB-A90A-CB9F03CFE107}
+		{FC73EB14-71AE-4E65-9C52-9E19D0EE69F4} = {CE34D92E-5F33-490F-B566-E9B78AA18FBA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5575C90B-1244-4EE3-8589-165EC5FF4FA9}
