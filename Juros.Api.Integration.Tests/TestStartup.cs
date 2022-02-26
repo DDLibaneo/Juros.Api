@@ -8,7 +8,8 @@ namespace Juros.Api.Integration.Tests
 {
     public class TestStartup : Startup
     {
-        public TestStartup(IConfiguration configuration) : base(configuration)
+        public TestStartup(IConfiguration configuration) 
+            : base(configuration)
         { }
 
         protected override void ConfigureDb(IServiceCollection services)
