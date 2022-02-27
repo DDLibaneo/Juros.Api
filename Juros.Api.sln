@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Juros.Services.Tests", "Jur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juros.Api.Tests", "Juros.Api.Tests\Juros.Api.Tests.csproj", "{58A067FD-EFAA-4D81-ABC9-008DEA5E4468}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juros.DataStore.Tests", "Juros.DataStore.Tests\Juros.DataStore.Tests.csproj", "{26B9B878-C90F-44DC-ACA9-157FD95AFB00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{58A067FD-EFAA-4D81-ABC9-008DEA5E4468}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58A067FD-EFAA-4D81-ABC9-008DEA5E4468}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58A067FD-EFAA-4D81-ABC9-008DEA5E4468}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26B9B878-C90F-44DC-ACA9-157FD95AFB00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26B9B878-C90F-44DC-ACA9-157FD95AFB00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26B9B878-C90F-44DC-ACA9-157FD95AFB00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26B9B878-C90F-44DC-ACA9-157FD95AFB00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,6 +77,7 @@ Global
 		{FC73EB14-71AE-4E65-9C52-9E19D0EE69F4} = {CE34D92E-5F33-490F-B566-E9B78AA18FBA}
 		{E0A0B107-E813-4CFA-9C0D-3A3F7CBE1EE9} = {43576DB7-621B-45EB-A90A-CB9F03CFE107}
 		{58A067FD-EFAA-4D81-ABC9-008DEA5E4468} = {43576DB7-621B-45EB-A90A-CB9F03CFE107}
+		{26B9B878-C90F-44DC-ACA9-157FD95AFB00} = {43576DB7-621B-45EB-A90A-CB9F03CFE107}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5575C90B-1244-4EE3-8589-165EC5FF4FA9}

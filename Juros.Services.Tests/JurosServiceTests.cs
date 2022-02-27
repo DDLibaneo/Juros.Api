@@ -12,7 +12,7 @@ namespace Juros.Services.Tests
         private readonly Mock<ICommands> _commands = new Mock<ICommands>();
         
         [Fact(DisplayName = "CreateJuro - [Success] - Returns Juro Id")]
-        public async Task CreateJuro_Success(string taxa)
+        public async Task CreateJuro_Success()
         {
             // Arrange
              
