@@ -14,9 +14,13 @@ namespace Juros.Api.Integration.Tests
         }
 
         [Fact(DisplayName = "GetJuro [Success] - Juro found")]
-        public async Task GetJuro_Found_Success()
+        public async Task GetJuro_Success_Found()
         {
+            // Arrange
 
+            // Act
+
+            // Assert
         }
     }
 }

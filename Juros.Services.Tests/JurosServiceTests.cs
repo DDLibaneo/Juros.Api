@@ -1,6 +1,7 @@
 using Juros.DataStore.Operations;
 using Moq;
 using System;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace Juros.Services.Tests
@@ -9,11 +10,15 @@ namespace Juros.Services.Tests
     {
         private readonly JurosService _service;
         private readonly Mock<ICommands> _commands = new Mock<ICommands>();
-
-        [Fact]
-        public void Test1()
+        
+        [Fact(DisplayName = "CreateJuro - [Success] - Returns Juro Id")]
+        public async Task CreateJuro_Success(string taxa)
         {
+            // Arrange
+             
+            // Act
 
+            // Assert
         }
     }
 }

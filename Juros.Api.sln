@@ -17,9 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Juros.Models", "Juros.Model
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{CE34D92E-5F33-490F-B566-E9B78AA18FBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juros.Common.DataCreate", "Juros.Common.DataCreate\Juros.Common.DataCreate.csproj", "{FC73EB14-71AE-4E65-9C52-9E19D0EE69F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Juros.Common.DataCreate", "Juros.Common.DataCreate\Juros.Common.DataCreate.csproj", "{FC73EB14-71AE-4E65-9C52-9E19D0EE69F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juros.Services.Tests", "Juros.Services.Tests\Juros.Services.Tests.csproj", "{E0A0B107-E813-4CFA-9C0D-3A3F7CBE1EE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Juros.Services.Tests", "Juros.Services.Tests\Juros.Services.Tests.csproj", "{E0A0B107-E813-4CFA-9C0D-3A3F7CBE1EE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juros.Api.Tests", "Juros.Api.Tests\Juros.Api.Tests.csproj", "{58A067FD-EFAA-4D81-ABC9-008DEA5E4468}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{E0A0B107-E813-4CFA-9C0D-3A3F7CBE1EE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0A0B107-E813-4CFA-9C0D-3A3F7CBE1EE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0A0B107-E813-4CFA-9C0D-3A3F7CBE1EE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58A067FD-EFAA-4D81-ABC9-008DEA5E4468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58A067FD-EFAA-4D81-ABC9-008DEA5E4468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58A067FD-EFAA-4D81-ABC9-008DEA5E4468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58A067FD-EFAA-4D81-ABC9-008DEA5E4468}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +70,7 @@ Global
 		{CE34D92E-5F33-490F-B566-E9B78AA18FBA} = {43576DB7-621B-45EB-A90A-CB9F03CFE107}
 		{FC73EB14-71AE-4E65-9C52-9E19D0EE69F4} = {CE34D92E-5F33-490F-B566-E9B78AA18FBA}
 		{E0A0B107-E813-4CFA-9C0D-3A3F7CBE1EE9} = {43576DB7-621B-45EB-A90A-CB9F03CFE107}
+		{58A067FD-EFAA-4D81-ABC9-008DEA5E4468} = {43576DB7-621B-45EB-A90A-CB9F03CFE107}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5575C90B-1244-4EE3-8589-165EC5FF4FA9}
