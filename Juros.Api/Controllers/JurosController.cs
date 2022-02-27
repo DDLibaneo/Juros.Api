@@ -20,7 +20,7 @@ namespace Juros.Api.Controllers
         }
 
         [HttpGet("taxa/juros")]
-        public async Task<IActionResult> GetLast()
+        public async Task<IActionResult> GetLastJuro()
         {
             throw new NotImplementedException();
         }

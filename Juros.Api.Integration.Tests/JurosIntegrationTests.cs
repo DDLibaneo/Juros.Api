@@ -22,11 +22,12 @@ namespace Juros.Api.Integration.Tests
             _apifixture.SeedDbJuro(taxa);
 
             // Act
-            var (responseObject, statusCode) = await _apifixture.GetInApiAsync<decimal>($"/api/juros");
+            var (responseObject, statusCode) = await _apifixture.GetInApiAsync<JuroDto>($"/api/juros");
 
             // Assert
+            Assert.IsType<JuroDto>(responseObject);
             Assert.Equal(200, (int)statusCode);
-            Assert.Equal(taxa, responseObject);
+            Assert.Equal(taxa, responseObject.Taxa);
         }
 
         [Fact(DisplayName = "CreateJuro - [Success] - Juro created")]
