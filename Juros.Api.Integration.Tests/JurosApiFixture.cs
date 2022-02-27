@@ -23,10 +23,10 @@ namespace Juros.Api.Integration.Tests
 
         private void Initialize()
         {
-            var localEnvironment = (LocalEnvironment)_environment;    
+            var localEnvironment = (LocalEnvironment)_environment;
         }
 
-        public async Task<(T ResponseObject, HttpStatusCode StatusCode)> GetInApi<T>(string url, string adProfile = null)
+        public async Task<(T ResponseObject, HttpStatusCode StatusCode)> GetInApiAsync<T>(string url)
         {
             var request = new HttpRequestMessage(HttpMethod.Get, url);
 
@@ -38,7 +38,7 @@ namespace Juros.Api.Integration.Tests
             return (dto, response.StatusCode);
         }
 
-        public async Task<(T ResponseObject, HttpStatusCode StatusCode)> PostInApi<T>(string url, string jsonBody)
+        public async Task<(T ResponseObject, HttpStatusCode StatusCode)> PostInApiAsync<T>(string url, string jsonBody)
         {
             var request = new HttpRequestMessage(HttpMethod.Post, url);
 

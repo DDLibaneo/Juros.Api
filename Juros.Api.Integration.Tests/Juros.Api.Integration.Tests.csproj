@@ -27,6 +27,7 @@
     <ProjectReference Include="..\Juros.Api\Juros.Api.csproj" />
     <ProjectReference Include="..\Juros.Common.DataCreate\Juros.Common.DataCreate.csproj" />
     <ProjectReference Include="..\Juros.DataStore\Juros.DataStore.csproj" />
+    <ProjectReference Include="..\Juros.Models\Juros.Models.csproj" />
   </ItemGroup>
 
 </Project>

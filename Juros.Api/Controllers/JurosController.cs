@@ -25,7 +25,7 @@ namespace Juros.Api.Controllers
             throw new NotImplementedException();
         }
 
-        [HttpPost("taxa/juros")]
+        [HttpPost("taxa/juros/{id}")]
         public async Task<IActionResult> CreateJuro(decimal taxa)
         {
             throw new NotImplementedException();
