@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 
 namespace Juros.DataStore.Tests
 {
+
     public class QueriesTests
     {
-        public async Task GetJuroAsync_Success()
+        public async Task GetJuro_Success()
         {
 
         }
