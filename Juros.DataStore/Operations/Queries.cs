@@ -11,6 +11,11 @@ namespace Juros.DataStore.Operations
 
     public class Queries : IQueries
     {
+        private readonly JurosDbContext _jurosDbContext;
 
+        public Queries(JurosDbContext jurosDbContext)
+        {
+            _jurosDbContext = jurosDbContext;
+        }
     }
 }

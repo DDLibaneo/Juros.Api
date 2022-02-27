@@ -11,6 +11,11 @@ namespace Juros.DataStore.Operations
 
     public class Commands : ICommands
     {
+        private readonly JurosDbContext _jurosDbContext;
 
+        public Commands(JurosDbContext jurosDbContext)
+        {
+            _jurosDbContext = jurosDbContext;
+        }
     }
 }

@@ -8,8 +8,14 @@ namespace Juros.Services.Tests
 {
     public class JurosServiceTests
     {
-        private readonly JurosService _service;
+        private readonly JurosService _jurosService;
+        private readonly Mock<IQueries> _queries = new Mock<IQueries>();
         private readonly Mock<ICommands> _commands = new Mock<ICommands>();
+
+        public JurosServiceTests()
+        {
+            _jurosService = new JurosService();
+        }
         
         [Fact(DisplayName = "CreateJuro - [Success] - Returns Juro Id")]
         public async Task CreateJuro_Success()
