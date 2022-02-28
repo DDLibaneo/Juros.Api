@@ -33,6 +33,9 @@ namespace Juros.Api.Integration.Tests
                 .ConfigureServices(servicesCollection =>
                     servicesCollection.AddScoped(async => _options))
                 .UseStartup<TestStartup>();
+
+            _server = new TestServer(builder);
+            Client = _server.CreateClient();
         }
     }
 }
