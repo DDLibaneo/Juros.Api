@@ -12,5 +12,8 @@ namespace Juros.Models.Entities
         [Required]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
         public decimal Taxa { get; set; }
+
+        [Required]
+        public DateTime CreationDate { get; set; }
     }
 }

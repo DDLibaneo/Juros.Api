@@ -14,8 +14,8 @@ namespace Juros.Api.Integration.Tests
             _apifixture = commonFixture.JurosApiFixture;
         }
 
-        [Fact(DisplayName = "GetJuro - [Success] - Juro found")]
-        public async Task GetJuro_Success_Found()
+        [Fact(DisplayName = "GetLastJuro - [Success] - Juro found")]
+        public async Task GetLastJuro_Success_Found()
         {
             // Arrange
             var taxa = 10.15m;

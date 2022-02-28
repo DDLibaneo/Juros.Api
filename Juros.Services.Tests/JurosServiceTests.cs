@@ -21,7 +21,18 @@ namespace Juros.Services.Tests
         public async Task CreateJuro_Success()
         {
             // Arrange
-             
+
+            // Act
+            var result = await _jurosService.GetLastJuro();
+
+            // Assert
+        }
+
+        [Fact(DisplayName = "GetLastJuro - [Success] - Returns JuroDto")]
+        public async Task GetLastJuro_Success()
+        {
+            // Arrange
+            
             // Act
 
             // Assert

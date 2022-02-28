@@ -20,8 +20,8 @@ namespace Juros.Api.Tests
             _jurosController = jurosController;
         }
 
-        [Fact(DisplayName = "GetJuro - [Success] - Returns JuroDto and success status code")]
-        public async Task GetJuro_Success()
+        [Fact(DisplayName = "GetLastJuro - [Success] - Returns JuroDto and success status code")]
+        public async Task GetLastJuro_Success()
         {
             // Arrange
             var id = 1;
