@@ -4,14 +4,16 @@ using System.Threading.Tasks;
 
 namespace Juros.Services
 {
-    public interface IJurosService
-    {
-        Task<JuroDto> GetLastJuro();
-    }
 
     public class JurosService : IJurosService
     {
-        public Task<JuroDto> GetLastJuro()
+
+        public async Task<int> CreateJuro(decimal taxa)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<JuroDto> GetLastJuro()
         {
             throw new NotImplementedException();
         }
