@@ -16,8 +16,7 @@ namespace Juros.DataStore.Tests
             _jurosDbContext = fixture.JurosDbContext;
         }
 
-        [Fact(DisplayName = "CreateJuroAsync - [Success] - Returns a tuple " +
-            "with true and an integer")]
+        [Fact(DisplayName = "CreateJuroAsync - [Success] - Returns a the Juro Id")]
         public async Task CreateJuroAsync_Success()
         {
             // Arrange

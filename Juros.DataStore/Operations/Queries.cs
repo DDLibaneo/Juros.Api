@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace Juros.DataStore.Operations
 {
@@ -22,7 +23,12 @@ namespace Juros.DataStore.Operations
 
         public async Task<Juro> GetLastJuroAsync()
         {
-            throw new NotImplementedException();
-        }        
+            var juros = _jurosDbContext.Juros;
+
+            var lastJuro = juros
+                .FirstOrDefault(j => j.CreationDate == juros.Max(j => j.CreationDate));
+
+            return lastJuro;
+        }
     }
 }

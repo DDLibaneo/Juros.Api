@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Juros.Models.Entities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,9 +19,19 @@ namespace Juros.DataStore.Operations
         {
             _jurosDbContext = jurosDbContext;
         }
+
         public async Task<int> CreateJuroAsync(decimal taxa)
         {
-            throw new NotImplementedException();
+            var juro = new Juro
+            {
+                Taxa = taxa,
+                CreationDate = DateTime.Now
+            };
+
+            _jurosDbContext.Juros.Add(juro);
+            await _jurosDbContext.SaveChangesAsync();
+
+            return juro.Id;
         }
     }
 }
