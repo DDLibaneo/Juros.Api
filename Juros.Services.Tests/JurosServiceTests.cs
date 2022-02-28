@@ -1,3 +1,4 @@
+using AutoMapper;
 using Juros.DataStore.Operations;
 using Juros.Models.Dtos;
 using Juros.Models.Entities;
@@ -13,10 +14,11 @@ namespace Juros.Services.Tests
         private readonly JurosService _jurosService;
         private readonly Mock<IQueries> _queries = new Mock<IQueries>();
         private readonly Mock<ICommands> _commands = new Mock<ICommands>();
+        private readonly Mock<IMapper> _mapper = new Mock<IMapper>();
 
         public JurosServiceTests()
         {
-            _jurosService = new JurosService();
+            _jurosService = new JurosService(_commands.Object, _queries.Object, _mapper.Object);
         }
         
         [Fact(DisplayName = "CreateJuro - [Success] - Returns Juro Id")]
@@ -24,7 +26,7 @@ namespace Juros.Services.Tests
         {
             // Arrange
             var taxa = 8.95m;
-            var expectedResult = (true, 1);
+            var expectedResult = 1;
 
             _commands.Setup(c => c.CreateJuroAsync(taxa))
                 .ReturnsAsync(expectedResult);
@@ -33,7 +35,7 @@ namespace Juros.Services.Tests
             var result = await _jurosService.CreateJuro(taxa);
 
             // Assert
-            Assert.Equal(expectedResult.Item2, result);
+            Assert.Equal(expectedResult, result);
 
             var message = "CreateJuro should be called once.";
             _commands.Verify(c => c.CreateJuroAsync(taxa), Times.Once, message);
@@ -50,8 +52,17 @@ namespace Juros.Services.Tests
                 CreationDate = DateTime.Now
             };
 
+            var juroDto = new JuroDto
+            {
+                Id = juro.Id,
+                Taxa = juro.Taxa,
+                CreationDate = juro.CreationDate
+            };
+
             _queries.Setup(q => q.GetLastJuroAsync())
                 .ReturnsAsync(juro);
+            _mapper.Setup(m => m.Map<Juro, JuroDto>(juro))
+                .Returns(juroDto);
 
             // Act
             var result = await _jurosService.GetLastJuro();

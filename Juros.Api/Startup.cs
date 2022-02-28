@@ -14,6 +14,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Juros.DataStore.Operations;
 using Microsoft.EntityFrameworkCore;
+using Juros.Models;
 
 namespace Juros.Api
 {
@@ -30,7 +31,8 @@ namespace Juros.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            
+
+            services.AddAutoMapper(typeof(MappingProfile));
             ConfigureApplicationServices(services);
             ConfigureDb(services);
         }

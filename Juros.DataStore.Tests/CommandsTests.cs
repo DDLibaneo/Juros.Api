@@ -27,8 +27,7 @@ namespace Juros.DataStore.Tests
             var result = await _commands.CreateJuroAsync(taxa);
 
             // Assert
-            Assert.True(result.Item1);
-            Assert.IsType<int>(result.Item2);
+            Assert.IsType<int>(result);
         }
     }
 }
