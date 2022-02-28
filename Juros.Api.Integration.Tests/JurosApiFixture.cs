@@ -18,12 +18,7 @@ namespace Juros.Api.Integration.Tests
 
         public JurosApiFixture()
         {
-            Initialize();
-        }
-
-        private void Initialize()
-        {
-            var localEnvironment = (LocalEnvironment)_environment;
+            _environment = new LocalEnvironment();
         }
 
         public async Task<(T ResponseObject, HttpStatusCode StatusCode)> GetInApiAsync<T>(string url)
