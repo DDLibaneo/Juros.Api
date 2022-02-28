@@ -1,5 +1,6 @@
 using Juros.DataStore.Operations;
 using Juros.Models.Dtos;
+using Juros.Models.Entities;
 using Moq;
 using System;
 using System.Threading.Tasks;
@@ -34,19 +35,25 @@ namespace Juros.Services.Tests
         public async Task GetLastJuro_Success()
         {
             // Arrange
-            var juroDto = new JuroDto
+            var juro = new Juro
             {
                 Id = 1,
                 Taxa = 21.50m,
                 CreationDate = DateTime.Now
             };
 
-            _queries.Setup()
+            _queries.Setup(q => q.GetLastJuro())
+                .ReturnsAsync(juro);
 
             // Act
             var result = await _jurosService.GetLastJuro();
 
             // Assert
+            Assert.Equal(result.Id, juro.Id);
+            Assert.Equal(result.Taxa, juro.Taxa);
+
+            _queries
+                .Verify(q => q.GetLastJuro(), Times.Once, "GetLastJuro should be called once.");
         }
     }
 }
