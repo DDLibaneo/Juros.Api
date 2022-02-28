@@ -1,5 +1,7 @@
-﻿using Juros.Services;
+﻿using Juros.Models.Dtos;
+using Juros.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Core;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -10,7 +12,7 @@ namespace Juros.Api.Controllers
 {
     [ApiController]
     [Route("api/juros")]
-    public class JurosController
+    public class JurosController : ControllerBase
     {
         private readonly IJurosService _jurosService;
 
@@ -22,13 +24,15 @@ namespace Juros.Api.Controllers
         [HttpGet("taxa/juros")]
         public async Task<IActionResult> GetLastJuro()
         {
-            throw new NotImplementedException();
+            var juro = await _jurosService.GetLastJuro();
+            return Ok(juro);
         }
 
         [HttpPost("taxa/juros/{id}")]
         public async Task<IActionResult> CreateJuro(decimal taxa)
         {
-            throw new NotImplementedException();
+            var idJuro = _jurosService.CreateJuro(taxa);
+            return Ok(idJuro);
         }
     }
 }

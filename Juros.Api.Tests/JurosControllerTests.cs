@@ -15,9 +15,9 @@ namespace Juros.Api.Tests
         private readonly JurosController _jurosController;
         private readonly Mock<IJurosService> _jurosService = new Mock<IJurosService>();
 
-        public JurosControllerTests(JurosController jurosController)
+        public JurosControllerTests()
         {
-            _jurosController = jurosController;
+            _jurosController = new JurosController(_jurosService.Object);
         }
 
         [Fact(DisplayName = "GetLastJuro - [Success] - Returns JuroDto and success status code")]
@@ -52,7 +52,7 @@ namespace Juros.Api.Tests
                 .Verify(j => j.GetLastJuro(), Times.Once(), "GetLastJuro should be called once.");
         }
 
-        [Fact(DisplayName = "CreateJuro - [Success] - Returns success status code and Juro Id")]
+        [Fact(DisplayName = "CreateJuro - [Success] - Returns success status code and a Juro Id")]
         public async Task CreateJuro_Success()
         {
             // Arrange
@@ -66,8 +66,16 @@ namespace Juros.Api.Tests
             var response = await _jurosController.CreateJuro(taxa);
 
             // Assert
-            var objectResult = Assert.IsType<int>(response);
-            Assert.Equal(objectResult, id);
+            var okObjectResult = Assert.IsType<OkObjectResult>(response);
+
+            Assert.Equal(StatusCodes.Status200OK, okObjectResult.StatusCode);
+
+            var resultId = okObjectResult.Value
+                .GetType()
+                .GetProperty("Id")
+                .GetValue(okObjectResult.Value, null);
+
+            Assert.IsType<int>(resultId);
 
             _jurosService
                 .Verify(j => j.CreateJuro(taxa), Times.Once(), "CreateJuro must be called once.");
