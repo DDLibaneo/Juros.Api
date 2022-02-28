@@ -16,14 +16,19 @@ namespace Juros.DataStore.Tests
             _jurosDbContext = fixture.JurosDbContext;
         }
 
-        [Fact(DisplayName = "InsertJuro - [Success]")]
-        public async Task InsertJuro_Success()
+        [Fact(DisplayName = "CreateJuroAsync - [Success] - Returns a tuple " +
+            "with true and an integer")]
+        public async Task CreateJuroAsync_Success()
         {
             // Arrange
+            var taxa = 5.55m;
 
             // Act
+            var result = await _commands.CreateJuroAsync(taxa);
 
             // Assert
+            Assert.True(result.Item1);
+            Assert.IsType<int>(result.Item2);
         }
     }
 }

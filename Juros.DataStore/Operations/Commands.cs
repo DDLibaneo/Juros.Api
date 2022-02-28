@@ -7,7 +7,7 @@ namespace Juros.DataStore.Operations
 {
     public interface ICommands
     {
-        Task<(bool, int)> CreateJuro(decimal taxa);
+        Task<(bool, int)> CreateJuroAsync(decimal taxa);
     }
 
     public class Commands : ICommands
@@ -18,7 +18,7 @@ namespace Juros.DataStore.Operations
         {
             _jurosDbContext = jurosDbContext;
         }
-        public Task<(bool, int)> CreateJuro(decimal taxa)
+        public async Task<(bool, int)> CreateJuroAsync(decimal taxa)
         {
             throw new NotImplementedException();
         }

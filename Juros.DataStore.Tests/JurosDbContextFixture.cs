@@ -1,4 +1,6 @@
-﻿using Microsoft.Data.Sqlite;
+﻿using Juros.Common.DataCreate;
+using Juros.Models.Entities;
+using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 
 namespace Juros.DataStore.Tests
@@ -20,6 +22,13 @@ namespace Juros.DataStore.Tests
 
             JurosDbContext = new JurosDbContext(options);
             JurosDbContext.Database.EnsureCreated();
+        }
+
+        public Juro SeedDbJuro(decimal taxa)
+        {
+            var juroDb = EntityCreate.SeedDbJuro(JurosDbContext, taxa);
+
+            return juroDb;
         }
     }
 }

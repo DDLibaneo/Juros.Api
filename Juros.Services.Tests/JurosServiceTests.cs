@@ -23,12 +23,20 @@ namespace Juros.Services.Tests
         public async Task CreateJuro_Success()
         {
             // Arrange
+            var taxa = 8.95m;
+            var expectedResult = (true, 1);
+
+            _commands.Setup(c => c.CreateJuroAsync(taxa))
+                .ReturnsAsync(expectedResult);
 
             // Act
-            
+            var result = await _jurosService.CreateJuro(taxa);
 
             // Assert
+            Assert.Equal(expectedResult.Item2, result);
 
+            var message = "CreateJuro should be called once.";
+            _commands.Verify(c => c.CreateJuroAsync(taxa), Times.Once, message);
         }
 
         [Fact(DisplayName = "GetLastJuro - [Success] - Returns JuroDto")]
@@ -42,7 +50,7 @@ namespace Juros.Services.Tests
                 CreationDate = DateTime.Now
             };
 
-            _queries.Setup(q => q.GetLastJuro())
+            _queries.Setup(q => q.GetLastJuroAsync())
                 .ReturnsAsync(juro);
 
             // Act
@@ -53,7 +61,7 @@ namespace Juros.Services.Tests
             Assert.Equal(result.Taxa, juro.Taxa);
 
             _queries
-                .Verify(q => q.GetLastJuro(), Times.Once, "GetLastJuro should be called once.");
+                .Verify(q => q.GetLastJuroAsync(), Times.Once, "GetLastJuro should be called once.");
         }
     }
 }

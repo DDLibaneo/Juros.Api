@@ -8,7 +8,7 @@ namespace Juros.DataStore.Operations
 {
     public interface IQueries
     {
-        Task<Juro> GetLastJuro();
+        Task<Juro> GetLastJuroAsync();
     }
 
     public class Queries : IQueries
@@ -20,7 +20,7 @@ namespace Juros.DataStore.Operations
             _jurosDbContext = jurosDbContext;
         }
 
-        public async Task<Juro> GetLastJuro()
+        public async Task<Juro> GetLastJuroAsync()
         {
             throw new NotImplementedException();
         }        
