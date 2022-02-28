@@ -4,14 +4,16 @@ using Juros.DataStore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Juros.DataStore.Migrations
 {
     [DbContext(typeof(JurosDbContext))]
-    partial class JurosDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220228005841_AddDateTimeToJuro")]
+    partial class AddDateTimeToJuro
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
