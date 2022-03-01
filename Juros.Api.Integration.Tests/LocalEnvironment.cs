@@ -37,5 +37,10 @@ namespace Juros.Api.Integration.Tests
             _server = new TestServer(builder);
             Client = _server.CreateClient();
         }
+
+        public void RefreshDbConnection()
+        {
+            JurosDbContext = new JurosDbContext(_options);
+        }
     }
 }

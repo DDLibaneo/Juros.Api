@@ -24,11 +24,9 @@ namespace Juros.DataStore.Tests
             JurosDbContext.Database.EnsureCreated();
         }
 
-        public Juro SeedDbJuro(decimal taxa)
+        public void SeedDbJuro(decimal taxa)
         {
-            var juroDb = EntityCreate.SeedDbJuro(JurosDbContext, taxa);
-
-            return juroDb;
+            EntityCreate.SeedDbJuro(JurosDbContext, taxa);            
         }
     }
 }

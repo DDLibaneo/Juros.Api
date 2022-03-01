@@ -7,20 +7,16 @@ namespace Juros.Common.DataCreate
 {
     public static class EntityCreate
     {
-        public static Juro SeedDbJuro(JurosDbContext jurosDbContext, decimal taxa)
+        public static void SeedDbJuro(JurosDbContext jurosDbContext, decimal taxa)
         {
             var juro = new Juro
             {
                 Taxa = taxa,
+                CreationDate = DateTime.Now,
             };
 
             jurosDbContext.Juros.Add(juro);
-
             jurosDbContext.SaveChanges();
-
-            var juroDb = jurosDbContext.Juros.FirstOrDefault();
-
-            return juroDb;
         }
     }
 }

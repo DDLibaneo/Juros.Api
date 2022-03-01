@@ -39,8 +39,7 @@ namespace Juros.Api.Integration.Tests
         {
             var request = new HttpRequestMessage(HttpMethod.Post, url);
 
-            if (jsonBody != null)
-                request.Content = CreateHttpJsonBody(jsonBody);
+            request.Content = CreateHttpJsonBody(jsonBody);
 
             var response = await Client.SendAsync(request);
             var responseContent = await response.Content.ReadAsStringAsync();
@@ -56,13 +55,11 @@ namespace Juros.Api.Integration.Tests
             return new StringContent(jsonBody, Encoding.UTF8, "application/json");
         }
 
-        public Juro SeedDbJuro(decimal taxa)
+        public void SeedDbJuro(decimal taxa)
         {
             var localEnvironment = (LocalEnvironment)_environment;
 
-            var juroDb = EntityCreate.SeedDbJuro(localEnvironment.JurosDbContext, taxa);
-
-            return juroDb;
+            EntityCreate.SeedDbJuro(localEnvironment.JurosDbContext, taxa);            
         }
     }
 }
