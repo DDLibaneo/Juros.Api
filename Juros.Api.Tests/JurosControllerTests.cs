@@ -37,7 +37,7 @@ namespace Juros.Api.Tests
                 .ReturnsAsync(expectedJuroDto);
 
             // Act
-            var response = await _jurosController.GetLastJuro();
+            var response = await _jurosController.GetLastJuroAsync();
 
             // Assert
             var objectResult = Assert.IsType<OkObjectResult>(response);
@@ -59,26 +59,23 @@ namespace Juros.Api.Tests
             var id = 1;
             var taxa = 9.21m;
 
-            _jurosService.Setup(j => j.CreateJuro(taxa))
+            _jurosService.Setup(j => j.CreateJuroAsync(taxa))
                 .ReturnsAsync(id);
 
             // Act
-            var response = await _jurosController.CreateJuro(taxa);
+            var response = await _jurosController.CreateJuroAsync(taxa);
 
             // Assert
             var okObjectResult = Assert.IsType<OkObjectResult>(response);
 
             Assert.Equal(StatusCodes.Status200OK, okObjectResult.StatusCode);
 
-            var resultId = okObjectResult.Value
-                .GetType()
-                .GetProperty("Id")
-                .GetValue(okObjectResult.Value, null);
+            var resultId = okObjectResult.Value;
 
             Assert.IsType<int>(resultId);
 
             _jurosService
-                .Verify(j => j.CreateJuro(taxa), Times.Once(), "CreateJuro must be called once.");
+                .Verify(j => j.CreateJuroAsync(taxa), Times.Once(), "CreateJuro must be called once.");
         }
     }
 }

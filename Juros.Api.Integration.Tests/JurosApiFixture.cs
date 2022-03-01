@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Xunit;
 using System.Net;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Schema;
 using Juros.Models.Entities;
 using Juros.Common.DataCreate;
 
@@ -28,7 +29,8 @@ namespace Juros.Api.Integration.Tests
             var response = await Client.SendAsync(request);
             var responseContent = await response.Content.ReadAsStringAsync();
 
-            var dto = JToken.Parse(responseContent).ToObject<T>();
+            var dto = JToken.Parse(responseContent)
+                .ToObject<T>();
 
             return (dto, response.StatusCode);
         }
@@ -37,7 +39,8 @@ namespace Juros.Api.Integration.Tests
         {
             var request = new HttpRequestMessage(HttpMethod.Post, url);
 
-            request.Content = CreateHttpJsonBody(jsonBody);
+            if (jsonBody != null)
+                request.Content = CreateHttpJsonBody(jsonBody);
 
             var response = await Client.SendAsync(request);
             var responseContent = await response.Content.ReadAsStringAsync();

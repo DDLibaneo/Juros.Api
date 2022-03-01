@@ -8,7 +8,7 @@ using System.Net.Http;
 
 namespace Juros.Api.Integration.Tests
 {
-    internal class LocalEnvironment : IEnvironment
+    public class LocalEnvironment : IEnvironment
     {
         public HttpClient Client { get; }
         public JurosDbContext JurosDbContext { get; internal set; }

@@ -25,7 +25,7 @@ namespace Juros.Services
         /// </summary>
         /// <param name="taxa"></param>
         /// <returns>Returns the JuroId.</returns>
-        public async Task<int> CreateJuro(decimal taxa)
+        public async Task<int> CreateJuroAsync(decimal taxa)
         {
             var juroId = await _commands.CreateJuroAsync(taxa);
             return juroId;

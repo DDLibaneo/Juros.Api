@@ -11,6 +11,6 @@ namespace Juros.Services
         /// Creates a Juro.
         /// </summary>
         /// <returns>Returns the Juro Id.</returns>
-        Task<int> CreateJuro(decimal taxa);
+        Task<int> CreateJuroAsync(decimal taxa);
     }
 }

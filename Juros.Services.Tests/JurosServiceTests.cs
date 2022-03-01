@@ -32,7 +32,7 @@ namespace Juros.Services.Tests
                 .ReturnsAsync(expectedResult);
 
             // Act
-            var result = await _jurosService.CreateJuro(taxa);
+            var result = await _jurosService.CreateJuroAsync(taxa);
 
             // Assert
             Assert.Equal(expectedResult, result);

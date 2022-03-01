@@ -1,4 +1,5 @@
 using Juros.Models.Dtos;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Threading.Tasks;
 using Xunit;
@@ -22,7 +23,7 @@ namespace Juros.Api.Integration.Tests
             _apifixture.SeedDbJuro(taxa);
 
             // Act
-            var (responseObject, statusCode) = await _apifixture.GetInApiAsync<JuroDto>($"/api/juros");
+            var (responseObject, statusCode) = await _apifixture.GetInApiAsync<JuroDto>($"/api/juros/taxa/juros");
 
             // Assert
             Assert.IsType<JuroDto>(responseObject);
@@ -34,13 +35,25 @@ namespace Juros.Api.Integration.Tests
         public async Task CreateJuro_Success_Created()
         {
             // Arrange
-            var taxa = 4.95;
+            var taxa = 4.95m;
+
+            var taxaDto = new TaxaDtoIn
+            {
+                Taxa = taxa
+            };
 
             // Act
-            var (_, statusCode) = await _apifixture.PostInApiAsync<decimal>($"/api/juros/{taxa}", null);
+            var (id, statusCodePost) = await _apifixture
+                .PostInApiAsync<int>($"/api/juros/taxa/juros", JToken.FromObject(taxaDto).ToString());
 
             // Assert
-            Assert.Equal(200, (int)statusCode);            
+            Assert.Equal(200, (int)statusCodePost);
+            Assert.IsType<int>(id);
+
+            var (responseObject, statusCodeGet) = await _apifixture.GetInApiAsync<JuroDto>($"/api/juros/taxa/juros");
+            Assert.IsType<JuroDto>(responseObject);
+            Assert.Equal(200, (int)statusCodeGet);
+            Assert.Equal(taxa, responseObject.Taxa);
         }
     }
 }

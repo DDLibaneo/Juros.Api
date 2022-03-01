@@ -22,16 +22,16 @@ namespace Juros.Api.Controllers
         }
 
         [HttpGet("taxa/juros")]
-        public async Task<IActionResult> GetLastJuro()
+        public async Task<IActionResult> GetLastJuroAsync()
         {
             var juro = await _jurosService.GetLastJuro();
             return Ok(juro);
         }
 
-        [HttpPost("taxa/juros/{id}")]
-        public async Task<IActionResult> CreateJuro(decimal taxa)
+        [HttpPost("taxa/juros/{taxa}")]
+        public async Task<IActionResult> CreateJuroAsync([FromBody]TaxaDtoIn taxaDto)
         {
-            var idJuro = _jurosService.CreateJuro(taxa);
+            var idJuro = await _jurosService.CreateJuroAsync(taxaDto.Taxa);
             return Ok(idJuro);
         }
     }
