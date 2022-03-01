@@ -59,11 +59,16 @@ namespace Juros.Api.Tests
             var id = 1;
             var taxa = 9.21m;
 
+            var dtoTaxa = new TaxaDtoIn
+            {
+                Taxa = taxa
+            };
+
             _jurosService.Setup(j => j.CreateJuroAsync(taxa))
                 .ReturnsAsync(id);
 
             // Act
-            var response = await _jurosController.CreateJuroAsync(taxa);
+            var response = await _jurosController.CreateJuroAsync(dtoTaxa);
 
             // Assert
             var okObjectResult = Assert.IsType<OkObjectResult>(response);

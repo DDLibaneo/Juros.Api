@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace Juros.Api.Controllers
 {
     [ApiController]
-    [Route("api/juros")]
+    [Route("api")]
     public class JurosController : ControllerBase
     {
         private readonly IJurosService _jurosService;
@@ -28,7 +28,7 @@ namespace Juros.Api.Controllers
             return Ok(juro);
         }
 
-        [HttpPost("taxa/juros/{taxa}")]
+        [HttpPost("taxa/juros")]
         public async Task<IActionResult> CreateJuroAsync([FromBody]TaxaDtoIn taxaDto)
         {
             var idJuro = await _jurosService.CreateJuroAsync(taxaDto.Taxa);

@@ -9,6 +9,8 @@ namespace Juros.Api.Integration.Tests
     public class JurosIntegrationTests : IClassFixture<CommonFixture>
     {
         private readonly JurosApiFixture _apifixture;
+        private readonly string URL = "/api/taxa/juros";
+
 
         public JurosIntegrationTests(CommonFixture commonFixture)
         {
@@ -23,7 +25,7 @@ namespace Juros.Api.Integration.Tests
             _apifixture.SeedDbJuro(taxa);
 
             // Act
-            var (responseObject, statusCode) = await _apifixture.GetInApiAsync<JuroDto>($"/api/juros/taxa/juros");
+            var (responseObject, statusCode) = await _apifixture.GetInApiAsync<JuroDto>(URL);
 
             // Assert
             Assert.IsType<JuroDto>(responseObject);
@@ -44,13 +46,13 @@ namespace Juros.Api.Integration.Tests
 
             // Act
             var (id, statusCodePost) = await _apifixture
-                .PostInApiAsync<int>($"/api/juros/taxa/juros", JToken.FromObject(taxaDto).ToString());
+                .PostInApiAsync<int>(URL, JToken.FromObject(taxaDto).ToString());
 
             // Assert
             Assert.Equal(200, (int)statusCodePost);
             Assert.IsType<int>(id);
 
-            var (responseObject, statusCodeGet) = await _apifixture.GetInApiAsync<JuroDto>($"/api/juros/taxa/juros");
+            var (responseObject, statusCodeGet) = await _apifixture.GetInApiAsync<JuroDto>(URL);
             Assert.IsType<JuroDto>(responseObject);
             Assert.Equal(200, (int)statusCodeGet);
             Assert.Equal(taxa, responseObject.Taxa);
