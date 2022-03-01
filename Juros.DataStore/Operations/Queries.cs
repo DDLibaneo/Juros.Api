@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace Juros.DataStore.Operations
@@ -25,8 +26,8 @@ namespace Juros.DataStore.Operations
         {
             var juros = _jurosDbContext.Juros;
 
-            var lastJuro = juros
-                .FirstOrDefault(j => j.CreationDate == juros.Max(j => j.CreationDate));
+            var lastJuro = await juros
+                .FirstOrDefaultAsync(j => j.CreationDate == juros.Max(j => j.CreationDate));
 
             return lastJuro;
         }
