@@ -10,7 +10,6 @@ namespace Juros.Models.Entities
         public int Id { get; set; }
 
         [Required]
-        [RegularExpression(@"^\d+(\.\d{1,2})?$")]
         public decimal Taxa { get; set; }
 
         [Required]
