@@ -57,5 +57,24 @@ namespace Juros.Api.Integration.Tests
             Assert.Equal(200, (int)statusCodeGet);
             Assert.Equal(taxa, responseObject.Taxa);
         }
+
+        [Fact(DisplayName = "CreateJuro - [Failure] - More than 2 decimals - Returns Bad Request")]
+        public async void CreateJuro_Failure_Created()
+        {
+            // Arrange
+            var taxa = 5.4321m;
+
+            var taxaDto = new TaxaDtoIn
+            {
+                Taxa = taxa
+            };
+
+            // Act
+            var (_, statusCodePost) = await _apifixture
+                .PostInApiAsync<object>(URL, JToken.FromObject(taxaDto).ToString());
+
+            // Assert
+            Assert.Equal(400, (int)statusCodePost);
+        }
     }
 }

@@ -31,6 +31,16 @@ namespace Juros.Api.Controllers
         [HttpPost("taxa/juros")]
         public async Task<IActionResult> CreateJuroAsync([FromBody]TaxaDtoIn taxaDto)
         {
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState
+                    .Select(m => m.Value.Errors)
+                    .Where(m => m.Count > 0)
+                    .ToList();
+
+                return BadRequest(errors);
+            }
+
             var idJuro = await _jurosService.CreateJuroAsync(taxaDto.Taxa);
             return Ok(idJuro);
         }

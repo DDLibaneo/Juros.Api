@@ -42,6 +42,7 @@ namespace Juros.Api.Integration.Tests
             request.Content = CreateHttpJsonBody(jsonBody);
 
             var response = await Client.SendAsync(request);
+
             var responseContent = await response.Content.ReadAsStringAsync();
 
             var dto = JToken.Parse(responseContent)
