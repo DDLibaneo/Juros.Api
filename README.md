@@ -16,3 +16,20 @@ No Nuget Package Manager Console, no cabeçalho do Drop Down List "Default Proje
 Rode o projeto clicando no botão Run do Visual Studio, escolhendo IIS Express como opção de Host.
 
 ##### 4. Endpoints
+Voce pode testar os endpoints no postman.
+* Get Last Juro
+  * Método: GET
+  * Url exemplo: http://localhost/api/taxa/juros
+* Create Juro
+  * Método: POST
+  * Url exemplo: http://localhost/api/taxa/juros
+  * exemplo body válido: 
+  ```
+  {
+    "Taxa": 0.01
+  }
+  ```
+  
+  #### 5. Rodando os Testes
+  Para rodar os testes da Solução abra o test Explorer e clique em "Run all tests". Os projetos de teste são aqueles com o sufixo .Tests
+  
