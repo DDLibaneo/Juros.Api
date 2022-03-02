@@ -23,7 +23,7 @@ Voce pode testar os endpoints no postman.
 * Create Juro
   * Método: POST
   * Url exemplo: http://localhost/api/taxa/juros
-  * exemplo body válido para uma taxa de 1%: 
+  * exemplo de um body válido para uma taxa de 1%: 
   ```
   {
     "Taxa": 0.01
