@@ -30,6 +30,6 @@ Voce pode testar os endpoints no postman.
   }
   ```
   
-  #### 5. Rodando os Testes
+  ##### 5. Rodando os Testes
   Para rodar os testes da Solução abra o test Explorer e clique em "Run all tests". Os projetos de teste são aqueles com o sufixo .Tests
   
