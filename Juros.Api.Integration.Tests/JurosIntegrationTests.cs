@@ -11,7 +11,6 @@ namespace Juros.Api.Integration.Tests
         private readonly JurosApiFixture _apifixture;
         private readonly string URL = "/api/taxa/juros";
 
-
         public JurosIntegrationTests(CommonFixture commonFixture)
         {
             _apifixture = commonFixture.JurosApiFixture;
